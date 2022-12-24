@@ -20,11 +20,18 @@ function App() {
     }, 500)
   }
 
+  function changeZIndex() {
+    setTimeout(() => {
+      return '0';
+    }, 500)
+  }
+  
   return (
     <div>
       <div className="loading" style={{
         opacity: !isLoaded ? '1' : '0',
         display: !isLoaded ? 'flex' : changeDisplay,
+        zIndex: !isLoaded ? '3' : changeZIndex,
         transition: '500ms'
       }}>
         <h1>
