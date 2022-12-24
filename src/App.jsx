@@ -22,7 +22,7 @@ function App() {
 
   function changeZIndex() {
     setTimeout(() => {
-      return '0';
+      return '-1';
     }, 500)
   }
   
