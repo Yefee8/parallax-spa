@@ -19,10 +19,10 @@ function App() {
       <div className="loading" style={{
         opacity: !isLoaded ? '1' : '0',
         zIndex: !isLoaded ? '3' : '1',
-        tranistion: '250ms'
+        transition: '500ms'
       }}>
         <h1>
-          <div ref={circleInstance}>Loading Loading Loading Loading Loading Loading</div>
+          <div ref={circleInstance}>Loading Loading Loading Loading Loading</div>
         </h1>
       </div>
 
