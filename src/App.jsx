@@ -18,7 +18,7 @@ function App() {
     <div>
       <div className="loading" style={{
         opacity: !isLoaded ? '1' : '0',
-        zIndex: !isLoaded ? '3' : '0',
+        zIndex: !isLoaded ? '3' : '1',
         tranistion: '250ms'
       }}>
         <h1>
@@ -28,9 +28,11 @@ function App() {
 
       <Parallax translateY={[-20, 20]} style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', paddingBottom: '15rem' }}>
         <div className="bg">
-          <img src={landscape} onLoad={() => {
-            setIsLoaded(true);
-          }} className="main-image" />
+          {!isLoaded &&
+            <img src={landscape} onLoad={() => {
+              setIsLoaded(true);
+            }} className="main-image" />
+          }
           <Parallax translateY={['-1200px', '1200px']}>
             <h1 className="title">
               for a relaxing
