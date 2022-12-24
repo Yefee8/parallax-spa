@@ -13,31 +13,36 @@ function App() {
   }, []);
 
   const [isLoaded, setIsLoaded] = useState(false);
-
+  const [showLoading, setShowLoading] = useState(true);
+  
   function changeDisplay() {
     setTimeout(() => {
       return 'none';
     }, 500)
   }
-
-  function changeZIndex() {
-    setTimeout(() => {
-      return '-1';
-    }, 500)
-  }
+  
+  useEffect(()=>{
+    if(isLoaded){
+      setTimeout(()=>{
+        setShowLoading(false);
+      },500)
+    }
+  },[isLoaded])
   
   return (
     <div>
-      <div className="loading" style={{
-        opacity: !isLoaded ? '1' : '0',
-        display: !isLoaded ? 'flex' : changeDisplay,
-        zIndex: !isLoaded ? '3' : changeZIndex,
-        transition: '500ms'
-      }}>
-        <h1>
-          <div ref={circleInstance}>Loading Loading Loading Loading Loading</div>
-        </h1>
-      </div>
+      {
+        showLoading &&
+         <div className="loading" style={{
+          opacity: !isLoaded ? '1' : '0',
+          display: !isLoaded ? 'flex' : changeDisplay,
+          transition: '500ms'
+          }}>
+            <h1>
+              <div ref={circleInstance}>Loading Loading Loading Loading Loading</div>
+            </h1>
+          </div>
+      }
 
       <Parallax translateY={[-20, 20]} style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', paddingBottom: '15rem' }}>
         <div className="bg">
