@@ -14,11 +14,17 @@ function App() {
 
   const [isLoaded, setIsLoaded] = useState(false);
 
+  function changeDisplay(){
+    setTimeout(()=>{
+      return 'none';
+    },500)
+  }
+
   return (
     <div>
       <div className="loading" style={{
         opacity: !isLoaded ? '1' : '0',
-        zIndex: !isLoaded ? '3' : '1',
+        display: !isLoaded ? 'flex' : changeDisplay,
         transition: '500ms'
       }}>
         <h1>
