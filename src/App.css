@@ -99,6 +99,7 @@
 
 .loading {
   background: #212121;
+  z-index: 3;
   position: fixed;
   top: 0px;
   left: 0px;

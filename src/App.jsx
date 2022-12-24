@@ -14,10 +14,10 @@ function App() {
 
   const [isLoaded, setIsLoaded] = useState(false);
 
-  function changeDisplay(){
-    setTimeout(()=>{
+  function changeDisplay() {
+    setTimeout(() => {
       return 'none';
-    },500)
+    }, 500)
   }
 
   return (
